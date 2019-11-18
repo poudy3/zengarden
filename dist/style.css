@@ -51,9 +51,9 @@ table {
 
 .page-wrapper {
   display: flex;
+  flex-flow: column wrap;
   height: 100%;
   width: 100%;
-  flex-flow: column wrap;
   text-align: center;
   justify-content: center;
 }
@@ -80,8 +80,15 @@ table {
 
 .sidebar {
   position: absolute;
+  height: 400px;
   order: 3;
   right: 90px;
+}
+
+.design-archives {
+  position: absolute;
+  bottom: 0px;
+  align-self: center;
 }
 
 .archives {
@@ -96,11 +103,13 @@ table {
 .viewall {
   height: 50px;
   width: 150px;
-  display: flex;
   background-color: lightgreen;
 }
 .viewall:hover {
   background-color: green;
+}
+.viewall a {
+  text-align: center;
 }
 
 li {

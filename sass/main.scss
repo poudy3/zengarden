@@ -1,11 +1,16 @@
 $color1:#131313;
 $color2:#f8f8f6;
+$color3:lightgreen;
+$color4:green;
 @import url('https://fonts.googleapis.com/css?family=Ma+Shan+Zheng|Marck+Script|Nanum+Brush+Script|Permanent+Marker|Rock+Salt|Yellowtail&display=swap');
 @mixin size{
     width: 900px;
     margin-left: 500px;
 }
-
+@mixin flexbox{
+    display: flex;
+    flex-flow: column wrap;
+}
 
 
 html, body, div, span, applet, object, iframe,
@@ -59,10 +64,9 @@ table {
 
 
 .page-wrapper{
-    display: flex; 
+    @include flexbox;
     height: 100%;
     width: 100%;
-    flex-flow: column wrap;
     text-align: center;
     justify-content: center;
 }
@@ -94,8 +98,14 @@ table {
 }
 .sidebar{
     position: absolute;
+    height: 400px;
     order: 3;
     right: 90px;
+}
+.design-archives{
+    position: absolute;
+    bottom: 0px;
+    align-self: center;
 }
 .archives{
     color: $color2;
@@ -107,11 +117,15 @@ table {
 .viewall{
     height: 50px;
     width: 150px;
-    display: flex;
-    background-color: lightgreen;
+    background-color:$color3;
+    
 
     &:hover{
-        background-color: green;
+        background-color: $color4;
+    }
+
+    a{
+        text-align: center;
     }
 }
 li{
@@ -163,7 +177,6 @@ a{
     }
 }
 ul{
-    display: flex;
-    flex-flow: column wrap;
+    @include flexbox;
     list-style-type: none;
 }
